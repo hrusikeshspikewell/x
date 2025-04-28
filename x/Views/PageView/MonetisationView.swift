@@ -9,6 +9,25 @@ import SwiftUI
 
 struct MonetisationView: View {
     var body: some View {
-        Text("MonetisationView")
+        ScrollView(){
+            VStack(alignment: .leading){
+                Text("Make money on X")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    
+                Text("The first step to monetization is getting verified with X Premium.")
+            }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+        }
+        .navigationTitle("Monetization")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackgroundVisibility(.visible)
+        .toolbarRole(.editor)
     }
+}
+
+#Preview {
+    MonetisationView()
 }

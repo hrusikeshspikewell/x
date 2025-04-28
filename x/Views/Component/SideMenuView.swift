@@ -108,11 +108,11 @@ struct SideMenuView: View {
             }) {
                 
                 HStack(spacing: 12) {
-                    Image(systemName: "bell")
+                    Image(systemName: "list.clipboard")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)
-                    Text("Notifications")
+                    Text("Lists")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }
@@ -124,11 +124,11 @@ struct SideMenuView: View {
             }) {
                 
                 HStack(spacing: 12) {
-                    Image(systemName: "envelope")
+                    Image(systemName: "microphone")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)
-                    Text("Messages")
+                    Text("Spaces")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }
@@ -150,7 +150,8 @@ struct SideMenuView: View {
                 .foregroundStyle(.black)
             }
 
-            Spacer()
+            Divider()
+                .padding(.vertical, 60)
             
             Button(action: {
                 navigate(to: .settings)
@@ -171,7 +172,7 @@ struct SideMenuView: View {
             Button(action: {
                 navigate(to: .dark)
             }) {
-                Label("Dark Mode", systemImage: "moon.fill")
+                Label("", systemImage: "moon.fill")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundStyle(.black)
@@ -186,6 +187,9 @@ struct SideMenuView: View {
             ActionSheetView(actionResult: $actionResult, User: $User)
                             .presentationDetents([.height(300)])
         }
+        
+//      Confirmation Dialog
+//
 //        .confirmationDialog("Choose an action", isPresented: $showingActionSheet, titleVisibility: .visible) {
 //            Button("Delete", role: .destructive) {
 //                selectedAction = "Deleted"

@@ -13,7 +13,6 @@ struct ProfileView: View {
                             Image("Post")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: .infinity, height: 200)
                                 .clipped()
                                 .padding(.top,60)
                                 

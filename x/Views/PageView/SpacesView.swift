@@ -9,6 +9,16 @@ import SwiftUI
 
 struct SpacesView: View {
     var body: some View {
-        Text("SpacesView")
+        ScrollView{
+            ForEach(0..<100, id: \.self) { i in
+                SpaceCard()
+            }
+            
+        }
+        .padding(.top, 10)
+        .navigationTitle("Spaces")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackgroundVisibility(.visible)
+        .toolbarRole(.editor)
     }
 }

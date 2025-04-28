@@ -6,18 +6,27 @@
 //
 
 import SwiftUI
+import SlidingTabView
 
 struct HomeView: View {
     @EnvironmentObject private var menuManager: SideMenuManager
+    @State var selectedIndex: Int = 0
+    @State var Tabs: [String] = ["For You", "Following"]
 
     var body: some View {
         
         VStack(spacing: 0){
+            SlidingTabView(selection: $selectedIndex, tabs: Tabs)
+            
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(tweets) { tweet in
-                        TweetRow(tweet: tweet)
-                        Divider()
+                    if(selectedIndex == 0){
+                        ForEach(tweets) { tweet in
+                            TweetRow(tweet: tweet)
+                            Divider()
+                        }
+                    }else{
+                        Text("Following Tweets")
                     }
                 }
                 .padding()
@@ -49,7 +58,7 @@ struct HomeView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing){
                     Button {
-                        menuManager.path.append(.settings)
+                        menuManager.path.append(.timelineSettings)
                     } label: {
                         Image(systemName: "gear")
                             .resizable()

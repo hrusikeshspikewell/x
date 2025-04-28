@@ -9,6 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("SettingsView")
+        VStack{
+            
+        }
+        .navigationTitle("Settings")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackgroundVisibility(.visible)
+        .toolbarRole(.editor)
     }
+}
+
+#Preview {
+    SettingsView()
 }

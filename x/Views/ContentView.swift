@@ -11,11 +11,11 @@ struct ContentView: View {
     @State var User: User
     @StateObject private var menuManager = SideMenuManager()
     @State private var selectedSideMenuTab = 0
-
+    
     private var menuWidth: CGFloat {
         UIScreen.main.bounds.width * 0.75
     }
-
+    
     var body: some View {
         NavigationStack(path: $menuManager.path){
             ZStack(alignment: .leading) {
@@ -66,13 +66,14 @@ struct ContentView: View {
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .profile: ProfileView()
-                case .premium: PremiumView(subscription: subscriptionPlans[0])
+                case .premium: PremiumView()
                 case .bookmark: BookmarkView()
                 case .list: ListView()
                 case .spaces: SpacesView()
                 case .monetisation: MonetisationView()
                 case .settings: SettingsView()
                 case .dark: DarkModeView()
+                case .timelineSettings: TimeLineSettings()
                 }
             }
             .environmentObject(menuManager)

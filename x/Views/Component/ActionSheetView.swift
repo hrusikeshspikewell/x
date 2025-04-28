@@ -20,6 +20,7 @@ struct ActionSheetView: View {
                     dismiss()
                 }) {
                     Image(systemName: "xmark")
+                        .foregroundStyle(.black)
                 }
             }
             .padding(.top, 20)
@@ -54,7 +55,7 @@ struct ActionSheetView: View {
                     Text("Add Existing Account")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
@@ -68,7 +69,7 @@ struct ActionSheetView: View {
                     Text("Add New Account")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
