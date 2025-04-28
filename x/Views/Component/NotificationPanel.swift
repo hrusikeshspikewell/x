@@ -30,6 +30,7 @@ struct NotificationPanel: View {
                     .font(.title3)
                 Text(tweet.content)
                     .font(.caption)
+                    .lineLimit(1)
             }
 
             Spacer()
