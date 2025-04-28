@@ -40,6 +40,7 @@ struct NotificationPanel: View {
                 } label: {
                     Image(systemName: "line.3.horizontal.decrease")
                         .font(.title3)
+                        .foregroundStyle(.black)
                 }
                 Spacer()
             }

@@ -27,31 +27,31 @@ struct SearchView: View {
                 case 0:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 case 1:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 case 2:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 case 3:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 case 4:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 case 5:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 default:
                     Text("Nothing here \(Tabs[selectedIndex])")
                         .font(.title)
-                        .fontWeight(.bold)
+                        
                 }
             }
             

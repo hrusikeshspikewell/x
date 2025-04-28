@@ -59,7 +59,6 @@ struct ContentView: View {
                     .frame(width: menuWidth)
                     .background(Color(UIColor.systemBackground))
                     .offset(x: menuManager.isOpen ? 0 : -menuWidth)
-                    .animation(.easeInOut, value: menuManager.isOpen)
                     .zIndex(1)
                     .environmentObject(menuManager)
             }

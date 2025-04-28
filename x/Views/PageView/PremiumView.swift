@@ -28,7 +28,7 @@ struct PremiumView: View {
                 subscription = subscriptionPlans[newValue]
             }
             .padding(.horizontal)
-            .padding(.bottom, 62)
+            .padding(.bottom, 70)
             .navigationTitle("Subscribe")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.white, for: .navigationBar)

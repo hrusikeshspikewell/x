@@ -169,14 +169,14 @@ struct SideMenuView: View {
             
             Spacer()
             
-            Button(action: {
-                navigate(to: .dark)
-            }) {
-                Label("", systemImage: "moon.fill")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.black)
-            }
+//            Button(action: {
+//                navigate(to: .dark)
+//            }) {
+//                Label("", systemImage: "moon.fill")
+//                    .font(.title2)
+//                    .fontWeight(.semibold)
+//                    .foregroundStyle(.black)
+//            }
         }
         .padding(.vertical, 65)
         .padding(.horizontal, 20)
