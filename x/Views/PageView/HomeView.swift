@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject private var menuManager: SideMenuManager
     @State var selectedIndex: Int = 0
     @State var Tabs: [String] = ["For You", "Following"]
+    @State var tweet: [Tweet] = tweets
 
     var body: some View {
         
@@ -21,7 +22,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     if(selectedIndex == 0){
-                        ForEach(tweets) { tweet in
+                        ForEach(tweet) { tweet in
                             TweetRow(tweet: tweet)
                             Divider()
                         }
@@ -32,7 +33,7 @@ struct HomeView: View {
                 .padding()
             }
             .refreshable {
-                
+                tweet = tweets.shuffled()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
