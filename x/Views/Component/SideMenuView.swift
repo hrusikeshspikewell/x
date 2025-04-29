@@ -17,10 +17,15 @@ struct SideMenuView: View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading){
                 HStack{
-                    Image(User.avatarName)
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(50)
+                    Button(action: {
+                        navigate(to: .profile)
+                    }){
+                        Image(User.avatarName)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(50)
+                    }
+                    
                     
                     
                     Spacer()
@@ -40,18 +45,29 @@ struct SideMenuView: View {
                     .foregroundStyle(.gray)
                 HStack(spacing: 15){
                     HStack(spacing: 0){
-                        Text("Following ")
-                            .font(.subheadline)
-                        Text("123")
-                            .font(.subheadline)
-                            .foregroundStyle(.gray)
+                        Button(action:{
+                            navigate(to: .followingView)
+                        }){
+                            Text("Following ")
+                                .font(.subheadline)
+                                .foregroundColor(.black)
+                            Text("123")
+                                .font(.subheadline)
+                                .foregroundStyle(.gray)
+                        }
+                        
                     }
                     HStack(spacing: 0){
-                        Text("Followers ")
-                            .font(.subheadline)
-                        Text("123")
-                            .font(.subheadline)
-                            .foregroundStyle(.gray)
+                        Button(action:{
+                            navigate(to: .followerView)
+                        }){
+                            Text("Followers ")
+                                .font(.subheadline)
+                                .foregroundColor(.black)
+                            Text("123")
+                                .font(.subheadline)
+                                .foregroundStyle(.gray)
+                        }
                     }
                 }
             }
@@ -187,6 +203,7 @@ struct SideMenuView: View {
             ActionSheetView(actionResult: $actionResult, User: $User)
                             .presentationDetents([.height(300)])
         }
+        
         
 //      Confirmation Dialog
 //

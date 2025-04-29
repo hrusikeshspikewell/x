@@ -10,6 +10,9 @@ import SwiftUI
 struct TweetRow: View {
     let tweet: Tweet
 
+    @State private var isRetweetTapped = false
+    @State private var isLikeTapped = false
+
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             Image(tweet.user.avatarName)
@@ -42,13 +45,28 @@ struct TweetRow: View {
                 }
 
                 HStack(spacing: 50) {
+                    
                     Image(systemName: "message")
-                    Image(systemName: "arrow.2.squarepath")
-                    Image(systemName: "heart")
+                        .foregroundStyle(.gray)
+                    
+                    Button(action: {
+                        isRetweetTapped.toggle()
+                    }) {
+                        Image(systemName: "arrow.2.squarepath")
+                            .foregroundColor(isRetweetTapped ? .blue : .gray)
+                    }
+                    
+                    Button(action: {
+                        isLikeTapped.toggle()
+                    }) {
+                        Image(systemName: isLikeTapped ? "heart.fill" : "heart")
+                            .foregroundColor(isLikeTapped ? .red : .gray)
+                    }
+                    
                     Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.gray)
                 }
                 .font(.subheadline)
-                .foregroundColor(.gray)
                 .padding(.top, 4)
             }
         }

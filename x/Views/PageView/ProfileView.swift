@@ -2,6 +2,7 @@ import SwiftUI
 import SlidingTabView
 
 struct ProfileView: View {
+    @EnvironmentObject private var menuManager: SideMenuManager
     @State var selectedIndex: Int = 0
     @State var Tabs: [String] = ["Posts", "Replies", "Highlights", "Articles", "Media", "Likes"]
     var body: some View {
@@ -91,17 +92,23 @@ struct ProfileView: View {
                     }
                     .padding(.horizontal)
                     HStack(spacing: 15){
-                        HStack(spacing: 0){
+                        Button(action:{
+                            menuManager.path.append(.followingView)
+                        }){
                             Text("Following ")
                                 .font(.subheadline)
+                                .foregroundColor(.black)
                             Text("123")
                                 .font(.subheadline)
                                 .foregroundStyle(.gray)
                         }
-                        HStack(spacing: 0){
+                        Button(action:{
+                            menuManager.path.append(.followerView)
+                        }){
                             Text("Followers ")
                                 .font(.subheadline)
-                            Text("253")
+                                .foregroundColor(.black)
+                            Text("123")
                                 .font(.subheadline)
                                 .foregroundStyle(.gray)
                         }

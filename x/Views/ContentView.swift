@@ -41,7 +41,7 @@ struct ContentView: View {
                         .tag(4)
                         .tabItem { Image(systemName: "envelope"); Text("Messages") }
                 }
-                
+                	
                 .environmentObject(menuManager)
                 
                 
@@ -64,7 +64,7 @@ struct ContentView: View {
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
-                case .profile: ProfileView()
+                case .profile: ProfileView().environmentObject(menuManager)
                 case .premium: PremiumView()
                 case .bookmark: BookmarkView()
                 case .list: ListView()
@@ -73,6 +73,8 @@ struct ContentView: View {
                 case .settings: SettingsView()
                 case .dark: DarkModeView()
                 case .timelineSettings: TimeLineSettings()
+                case .followingView: FollowingView()
+                case .followerView: FollowersView()
                 }
             }
             .environmentObject(menuManager)
